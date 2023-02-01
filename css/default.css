@@ -313,17 +313,6 @@ main {
 	height: calc(100vw - 6rem);
 }
 
-.slider-buttons {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: absolute;
-	top: 0;
-	left: 1rem;
-	right: 1rem;
-	height: 100%;
-}
-
 .slider-button {
 	display: flex;
 	align-items: center;
@@ -706,10 +695,6 @@ main {
 		outline: 3px solid blue;
 	}
 
-	.slider-buttons {
-		display: none;
-	}
-
 	.thumbnails {
 		display: flex;
 		gap: clamp(0.7rem, 1.5vw, 1.8rem);
@@ -818,13 +803,8 @@ main {
 		overflow-x: hidden;
 	}
 
-	.lightbox-buttons {
-		display: flex;
-		left: -1.75rem;
-		right: -1.75rem;
-	}
-
 	.lightbox-button {
+		display: block;
 		width: 3.5rem;
 		height: 3.5rem;
 	}

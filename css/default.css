@@ -695,6 +695,10 @@ main {
 		outline: 3px solid blue;
 	}
 
+	.slider-button {
+		display: none;
+	}
+
 	.thumbnails {
 		display: flex;
 		gap: clamp(0.7rem, 1.5vw, 1.8rem);
@@ -804,7 +808,7 @@ main {
 	}
 
 	.lightbox-button {
-		display: block;
+		display: flex;
 		width: 3.5rem;
 		height: 3.5rem;
 	}

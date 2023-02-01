@@ -297,6 +297,10 @@ main {
 	overflow-x: hidden;
 }
 
+.images-nav-container {
+	position: relative;
+}
+
 .slider-images {
 	display: flex;
 	transition: transform 0.3s;
@@ -306,7 +310,7 @@ main {
 	flex: 1 0 100%;
 	object-position: center;
 	object-fit: cover;
-	height: 19rem;
+	height: calc(100vw - 6rem);
 }
 
 .slider-buttons {
@@ -321,14 +325,34 @@ main {
 }
 
 .slider-button {
-	border: 3px solid transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	border: none;
 	border-radius: 50%;
 	width: 2.5rem;
 	height: 2.5rem;
+	background-color: var(--color-neutral-white);
 	box-shadow: 0 0 10px hsla(0, 0%, 0%, 20%);
 	cursor: pointer;
 	transform-origin: center;
 	transition: transform 0.3s;
+}
+
+.slider-button-svg-previous,
+.slider-button-svg-next {
+	width: 50%;
+}
+
+.slider-button-svg-previous {
+	position: relative;
+	left: -0.1rem;
+}
+
+.slider-button-svg-next {
+	position: relative;
+	right: -0.05rem;
 }
 
 .slider-button:hover {
@@ -339,12 +363,20 @@ main {
 }
 
 .slider-button-previous {
-	background: url(../images/icon-previous.svg) 46% center / 30% no-repeat var(--color-neutral-white);
-	top: 50%;
+	/*background: url(../images/icon-previous.svg) 46% center / 30% no-repeat var(--color-neutral-white);*/
+	top: calc(50% - 1.25rem);
+	left: 1rem;
 }
 
 .slider-button-next {
-	background: url(../images/icon-next.svg) 54% / 30% no-repeat var(--color-neutral-white);
+	/*background: url(../images/icon-next.svg) 54% / 30% no-repeat var(--color-neutral-white);*/
+	top: calc(50% - 1.25rem);
+	right: 1rem;
+}
+
+.slider-button-previous:hover .slider-button-svg-previous-path,
+.slider-button-next:hover .slider-button-svg-next-path {
+	stroke: var(--color-primary-orange);
 }
 
 /* Thumbmails */
@@ -797,16 +829,18 @@ main {
 		height: 3.5rem;
 	}
 
-	.lightbox-close-button {
-		background: transparent;
-		width: 2rem;
-		height: 2rem;
-		border: 0;
-		cursor: pointer;
+	.lightbox-button .slider-button-svg-previous,
+	.lightbox-button .slider-button-svg-next {
+		width: 30%;
 	}
 
 	.lightbox-close-button {
 		align-self: flex-end;
+		background: transparent;
+		width: 2rem;
+		height: 2rem;
+		border: 0;	
+		cursor: pointer;
 	}
 
 	.lightbox-close-button-path {
@@ -815,6 +849,11 @@ main {
 
 	.lightbox-close-button:hover .lightbox-close-button-path {
 		fill: var(--color-primary-orange-hover);
+	}
+
+	#lightbox-thumbnails {
+		margin-left: 2rem;
+		margin-right: 2rem;
 	}
 }
 
